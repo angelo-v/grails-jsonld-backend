@@ -1,0 +1,12 @@
+import reactld.example.Article
+import reactld.example.Comment
+
+model {
+    Comment comment
+}
+json {
+    '@id' g.link(controller: 'articles', action: 'show', params: [slug: comment.article.slug], fragment: "comment-${comment.id}")
+    '@type' 'type:Comment'
+    commenter comment.commenter.name
+    text comment.text
+}
