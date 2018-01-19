@@ -1,0 +1,9 @@
+import reactld.example.Link
+
+model {
+    Link link
+}
+json {
+    "@id" link.url
+    title link.title
+}

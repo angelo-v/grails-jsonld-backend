@@ -1,0 +1,25 @@
+import reactld.example.Link
+
+model {
+    List<Link> navigation
+}
+json {
+    "@context" {
+        "@language" "en"
+        "id" "@id"
+        type {
+            "@id" "http://schema.example/blog/type/"
+        }
+        rdf { "@id" "http://www.w3.org/1999/02/22-rdf-syntax-ns#" }
+        blog { "@id" "http://schema.example/blog/" }
+        articleList "blog:articleList"
+        navigation "blog:navigation"
+        title "rdf:title"
+    }
+    "@id" "/"
+    "@type" "type:StartPage"
+    articleList {
+        id "/articles/latest"
+    }
+    navigation tmpl.navItem(navigation)
+}
