@@ -20,8 +20,8 @@ class ArticlesController {
         ])
     }
 
-    def show(String urlTitle) {
-        def article = Article.findByUrlTitle(urlTitle)
+    def show(String slug) {
+        def article = Article.findBySlug(slug)
         return [article: article]
     }
 }

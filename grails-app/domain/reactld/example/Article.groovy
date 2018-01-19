@@ -4,7 +4,7 @@ class Article {
 
     String title
     String text
-    String urlTitle
+    String slug
 
     Author author
 

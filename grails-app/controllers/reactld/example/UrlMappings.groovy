@@ -5,7 +5,7 @@ class UrlMappings {
     static mappings = {
 
         "/articles/latest"(controller: "articles", action: "latest")
-        "/articles/$urlTitle"(controller: "articles", action: "show")
+        "/articles/$slug"(controller: "articles", action: "show")
 
         "/authors/$username"(controller: "authors", action: "show")
         "/authors/$username/articles"(controller: "articles", action: "byAuthor")
