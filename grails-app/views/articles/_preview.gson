@@ -4,7 +4,7 @@ model {
     Article article
 }
 json {
-    '@id' g.link(controler: 'article', action: 'show', params: [urlTitle: article.urlTitle])
+    '@id' g.link(controller: 'articles', action: 'show', params: [urlTitle: article.urlTitle])
     '@type' 'type:Article'
     title article.title
     description article.text.substring(0, 10) + "..."

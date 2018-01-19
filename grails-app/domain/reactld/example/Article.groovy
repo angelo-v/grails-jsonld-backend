@@ -6,6 +6,8 @@ class Article {
     String text
     String urlTitle
 
+    Author author
+
     static constraints = {
     }
 }

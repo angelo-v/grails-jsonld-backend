@@ -7,6 +7,7 @@ class ArticlesController {
     }
 
     def show(String urlTitle) {
-        return [article: Article.findByUrlTitle(urlTitle)]
+        def article = Article.findByUrlTitle(urlTitle)
+        return [article: article]
     }
 }
