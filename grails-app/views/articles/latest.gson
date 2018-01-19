@@ -1,0 +1,25 @@
+import reactld.example.Article
+
+model {
+    List<Article> articles
+}
+json {
+    "@context" {
+        "@language" "en"
+        "id" "@id"
+        type {
+            "@id" "http://schema.example/blog/type/"
+        }
+        rdf { "@id" "http://www.w3.org/1999/02/22-rdf-syntax-ns#" }
+        blog { "@id" "http://schema.example/blog/" }
+        title "rdf:title"
+        description "rdf:description"
+        list {
+            "@id" "http://schema.example/list#"
+        }
+        content "list:content"
+    }
+    "@id" "/articles/latest"
+    "@type" "type:ArticleList"
+    content tmpl.preview(articles)
+}

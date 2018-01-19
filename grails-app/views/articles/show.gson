@@ -1,0 +1,26 @@
+import reactld.example.Article
+
+model {
+    Article article
+}
+json {
+    "@context" {
+        "@language" "en"
+        "id" "@id"
+        type {
+            "@id" "http://schema.example/blog/type/"
+        }
+        rdf { "@id" "http://www.w3.org/1999/02/22-rdf-syntax-ns#" }
+        blog { "@id" "http://schema.example/blog/" }
+        title "rdf:title"
+        description "rdf:description"
+        author "blog:author"
+    }
+    "@id" g.link(controler: 'article', action: 'show', params: [urlTitle: article.urlTitle])
+    "@type" "type:Article"
+    title article.title
+    description article.text
+    author {
+        "@id" "/me"
+    }
+}
