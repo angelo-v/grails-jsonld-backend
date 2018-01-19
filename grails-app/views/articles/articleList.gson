@@ -1,6 +1,8 @@
 import reactld.example.Article
 
 model {
+    String id
+    String title
     List<Article> articles
 }
 json {
@@ -19,7 +21,8 @@ json {
         }
         content "list:content"
     }
-    "@id" "/articles/latest"
+    "@id" id
     "@type" "type:ArticleList"
+    title title
     content tmpl.preview(articles)
 }

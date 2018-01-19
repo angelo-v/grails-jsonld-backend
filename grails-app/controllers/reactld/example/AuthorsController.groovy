@@ -3,6 +3,7 @@ package reactld.example
 class AuthorsController {
 
     def show(String username) {
-        return Author.findByUsername(username)
+        def author = Author.findByUsername(username)
+        return [author: author]
     }
 }

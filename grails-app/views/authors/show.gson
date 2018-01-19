@@ -1,0 +1,32 @@
+import reactld.example.Author
+
+model {
+    Author author
+}
+json {
+    "@context" {
+        "@language" "en"
+        type {
+            "@id" "http://schema.example/blog/type/"
+        }
+        rdf { "@id" "http://www.w3.org/1999/02/22-rdf-syntax-ns#" }
+        blog { "@id" "http://schema.example/blog/" }
+        title "rdf:title"
+        description "rdf:description"
+        author "blog:author"
+        foaf {
+            "@id" "http://xmlns.com/foaf/0.1/"
+        }
+        name "foaf:name"
+        picture "foaf:picture"
+        articleList "blog:articleList"
+    }
+    "@id" g.link(controller: 'authors', params: [username: author.username])
+    "@type" "type:Author"
+    name author.displayName
+    description author.description
+    picture { "@id" author.picture.url }
+    articleList {
+        "@id" g.link(controller: 'articles', action: 'byAuthor', params: [username: author.username])
+    }
+}

@@ -8,6 +8,7 @@ class UrlMappings {
         "/articles/$urlTitle"(controller: "articles", action: "show")
 
         "/authors/$username"(controller: "authors", action: "show")
+        "/authors/$username/articles"(controller: "articles", action: "byAuthor")
 
         "/"(controller: "root")
         "500"(view:'/error')
