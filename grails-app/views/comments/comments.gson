@@ -1,4 +1,3 @@
-import reactld.example.Article
 import reactld.example.Comment
 
 model {
@@ -20,6 +19,8 @@ json {
             "@id" "http://schema.example/list#"
         }
         content "list:content"
+        commenter   "blog:commenter"
+        text    "rdf:description"
     }
     "@id" id
     "@type" "type:Comments"
